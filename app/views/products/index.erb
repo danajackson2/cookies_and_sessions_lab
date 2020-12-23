@@ -1,0 +1,13 @@
+<h1>Index page</h1>
+<%=form_for 'product' do |f|%>
+    <%=f.label :name %>
+    <%=f.text_field :name %>
+    <%=f.submit "add to cart"%>
+<% end %>
+
+<h2>Cart:</h2>
+<%if session[:cart]%>
+    <% session[:cart].each do |product| %>
+        <%=product%><br>
+    <% end %>
+<%end%>
